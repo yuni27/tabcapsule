@@ -14,13 +14,12 @@ import ReactNative, {
 import { Container, StyleProvider, Content, Input, Textarea } from 'native-base';
 import Swiper from 'react-native-swiper';
 import ModalWrapper from 'react-native-modal-wrapper';
-
 import screen from '../../navigation/ChooseScreen';
 import colors from '../../config/colors';
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/material';
 import styles from '../../config/styles';
-import Header from '../../utilities/Header';
+import Header from '../../components/Header/Header';
 import images from '../../config/images';
 
 const { height, width } = Dimensions.get('window');

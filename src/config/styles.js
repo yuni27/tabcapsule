@@ -110,6 +110,20 @@ export default StyleSheet.create({
 		borderWidth: 1,
 		padding: 16
 	},
+	modalShare: {
+		width: width,
+		justifyContent: 'flex-end',
+		marginBottom: 80
+	},
+	containerQrcodeScan: {
+		height: height,
+		backgroundColor: colors.black,
+		paddingTop: (height - 100 - height / 2) / 2
+	},
+	contentQrcode: {
+		height: height / 2,
+		width: width
+	},
 	iconHelp: {
 		width: 50,
 		height: 50,
@@ -119,7 +133,6 @@ export default StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
-
 	//size
 	sizeLogo: {
 		width: 1182 / 5,

@@ -14,7 +14,7 @@ import {
 import { Text, Container, List, StyleProvider, Content } from 'native-base';
 // import moment from 'moment';
 import screen from '../../navigation/ChooseScreen';
-import Header from '../../utilities/HeaderBack';
+import Header from '../../components/Header/HeaderBack';
 import colors from '../../config/colors';
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/material';
