@@ -13,6 +13,7 @@ import ReactNative, {
 } from 'react-native';
 import { Container, StyleProvider, Content, Input, Textarea } from 'native-base';
 import Swiper from 'react-native-swiper';
+import ModalWrapper from 'react-native-modal-wrapper';
 
 import screen from '../../navigation/ChooseScreen';
 import colors from '../../config/colors';
@@ -33,7 +34,9 @@ class Home extends Component {
 				{ image: images.images_promo1 },
 				{ image: images.images_promo2 },
 				{ image: images.images_promo3 }
-			]
+			],
+			visibleLogin: false,
+			cardnumber: ''
 		};
 	}
 
@@ -49,6 +52,51 @@ class Home extends Component {
 							{this.renderGift()}
 						</View>
 					</SafeAreaView>
+					<ModalWrapper
+						style={{
+							width: width - 100,
+							height: 250
+						}}
+						onRequestClose={() => this.setState({ visibleLogin: false })}
+						visible={this.state.visibleLogin}
+						position="top"
+					>
+						<View
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center'
+							}}
+						>
+							<Text style={[ styles.Reg_24, { marginBottom: 20 } ]}>Connect to your member card</Text>
+							<View
+								style={[
+									styles.buttonSquare,
+									{ width: width - 140, alignItems: 'flex-start', backgroundColor: colors.darkGrey }
+								]}
+							>
+								<Input
+									placeholderTextColor={colors.white}
+									placeholder="Card number"
+									style={[ styles.Reg_18, { color: colors.white } ]}
+									autoCorrect={false}
+									autoCapitalize="none"
+									returnKeyType={'next'}
+									underlineColorAndroid="transparent"
+									keyboardType={'numeric'}
+									onChangeText={(cardnumber) => this.setState({ cardnumber })}
+									value={this.state.cardnumber}
+								/>
+							</View>
+							<TouchableOpacity
+								style={[ styles.buttonSquare, { width: width - 140, marginTop: 20 } ]}
+								onPress={() => this.setState({ visibleLogin: false })}
+							>
+								<Text allowFontScaling={false} style={[ styles.Reg_18, { color: colors.white } ]}>
+									Connect Now
+								</Text>
+							</TouchableOpacity>
+						</View>
+					</ModalWrapper>
 				</Container>
 			</StyleProvider>
 		);
@@ -73,6 +121,7 @@ class Home extends Component {
 							width: 1182 / 5
 						}
 					]}
+					onPress={() => this.setState({ visibleLogin: true })}
 				>
 					<Text style={[ styles.Bold_18, { color: colors.white } ]}>CONNECT YOUR MEMBER CARD</Text>
 				</TouchableOpacity>
@@ -130,11 +179,16 @@ class Home extends Component {
 						margin: 20
 					}
 				]}
+				onPress={() => this.showAlert()}
 			>
 				<Image source={images.icon_gift} style={{ width: 50, height: 50, marginRight: 20 }} />
 				<Text style={[ styles.Bold_24, { color: colors.white } ]}>MEMBER'S GIFT</Text>
 			</TouchableOpacity>
 		);
+	}
+
+	showAlert() {
+		Alert.alert('Maaf', 'Gift dapat diakses setelah login dengan kartu member', [ { text: 'Ok' } ]);
 	}
 }
 

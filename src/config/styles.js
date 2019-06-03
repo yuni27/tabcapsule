@@ -110,6 +110,15 @@ export default StyleSheet.create({
 		borderWidth: 1,
 		padding: 16
 	},
+	iconHelp: {
+		width: 50,
+		height: 50,
+		borderColor: colors.primary,
+		borderWidth: 3,
+		borderRadius: 25,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
 
 	//size
 	sizeLogo: {
