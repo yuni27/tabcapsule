@@ -24,7 +24,7 @@ import colors from "../../config/colors";
 import getTheme from "../../../native-base-theme/components";
 import material from "../../../native-base-theme/variables/material";
 import styles from "../../config/styles";
-import Header from "../../utilities/Header";
+import Header from "../../components/Header/Header";
 import images from "../../config/images";
 
 class QRCode extends Component {
@@ -50,6 +50,7 @@ class QRCode extends Component {
           <Header
             navigation={this.props.navigation}
             title={this.state.titlePage}
+            hiddenHeaderRight={false}
           />
           <Content style={styles.containerQrcodeScan}>
             <View style={styles.contentQrcode}>

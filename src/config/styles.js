@@ -110,7 +110,11 @@ export default StyleSheet.create({
     borderWidth: 1,
     padding: 16
   },
-
+  modalShare: {
+    width: width,
+    justifyContent: "flex-end",
+    marginBottom: 80
+  },
   containerQrcodeScan: {
     height: height,
     backgroundColor: colors.black,
