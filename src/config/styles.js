@@ -113,11 +113,12 @@ export default StyleSheet.create({
 
   containerQrcodeScan: {
     height: height,
-    backgroundColor: colors.darkGrey
+    backgroundColor: colors.black,
+    paddingTop: (height - 100 - height / 2) / 2
   },
   contentQrcode: {
-    justifyContent: "flex-start",
-    alignItems: "flex-start"
+    height: height / 2,
+    width: width
   },
 
   //size
